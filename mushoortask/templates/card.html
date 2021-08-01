@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Card Component</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: aliceblue;
+            font-family: Open Sans, sans-serif;
+        }
+        .heading{
+            text-align: center;
+            font-size: 20px;
+            margin-top: 10p;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            color: rgb(89, 72, 136);
+        }
+        img{
+            width: 100%;
+            border-radius: 8px;
+            height: 200px;
+        }
+        .box{
+            width: 30%;
+            float: left;
+            margin: 50px 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius:8px;
+            box-shadow:0 5px 5px rgba(0,0,0,0.15);
+        }
+        .box h4{
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+       
+        .box p{
+            font-size: 15px;
+            line-height: 28px;
+            height: 90px;
+            overflow: hidden;
+        }
+        .box a{
+            display: inline-block;
+            color: #fff;
+            background-color: #2196f3;
+            text-decoration: aliceblue;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .box a:hover{
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+        }
+        .box.showContent p{
+            height: auto;
+        }
+        .box.showContent a.readmore-btn{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <h1>Developer Card Component</h1>
+    </div>
+    <div class="box">
+        <img src="{% static 'images/frontend.jpg'%}" alt="" >
+        <h4>Frontend</h4>
+        <p>Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly.
+        The challenge associated with front end development is that the 
+        tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing. Front end languages include HTML, CSS, and Javascript. While JQuery is going out of style (modern browsers can now do the same work, but much more quickly than jQuery), many legacy projects still use JavaScript library, so don't be surprised to see it on a bootcamp's curriculum. You’ll also learn tons about responsive design along with typography, layouts, grid system, and color theory. When anticipating types of projects you’ll work on as a front end developer, think creating and redesigning websites. In order to be a front end developer 
+        (sometimes even called a Javascript developer) you do not need back end development skills.</p>
+        <a href="javascript:void();" class="readmore-btn">Read More</a>
+    </div>
+    <div class="box">
+        <img src="{% static 'images/backend.png'%}" alt="">
+        <h4>Backend</h4>
+        <p>Back end Development refers to the server side of development where you are primarily focused on how the site works. Making updates and changes in addition to monitoring functionality of the site will be your primary responsibility. This type of web development usually consists of three parts: a server, an application, and a database. Code written by back end developers is what communicates the database information to the browser. 
+        Anything you can’t see easily with the eye such as databases and
+        servers is the work of a back end developer.  Back end developer positions are often called programmers or web developers.
+        Many back end developers know front end languages such as HTML and CSS but need to use languages such as Java, PHP, Ruby on Rails, Python, and .Net to get the back end job done.  Back end developers are most focused on a site’s responsiveness and speed. These languages are used to create dynamic sites which are different from static sites in that these types of websites store database information. Content on the site is constantly changing and updating. Examples of dynamic sites include Facebook,
+        Twitter, and Google Maps.</p>
+        <a href="javascript:void();" class="readmore-btn">Read More</a>
+    </div>
+    <div class="box">
+        <img src="{% static 'images/fullstack.jpg'%}" alt="">
+        <h4>Fullstack</h4>
+        <p>A full stack developer is a web developer or engineer who works with both the front and back ends of a website or application — meaning they can tackle projects that involve databases, APIs, build user-facing websites, or even work with clients during the planning phase of projects — they work both client-side and server-side. 
+            Are familiar with HTML, CSS, JavaScript, and one or more back end languages.
+            Most full stack developers specialize in a particular back end programming language, like Ruby or PHP or Python, although some, especially if they’ve been working as a developer for a while, work with more than one. In job listings, you’ll generally see openings for “full stack Ruby developer” or the like.
+            Some full stack developers also learn either project management, visual design, web design, or user experience skills — to complete their “stack,” if you will!</p>
+        <a href="javascript:void();" class="readmore-btn">Read More</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>">
+    <script>
+    $(".readmore-btn").on('click',function(){
+      $(this).parent().toggleClass("showContent");
+
+       var replaceText = $(this).parent().hasClass("showContent") ? "Read Less" : "Read More";
+       $(this).text(replaceText);
+    });
+   </script>
+</body>
+</html>
